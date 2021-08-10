@@ -1,8 +1,11 @@
 package application;
 
+import boardgame.Position;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Position p1 = new Position(2, 5);
+        System.out.println(p1);
     }
 }
