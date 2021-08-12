@@ -2,10 +2,12 @@ package boardgame;
 
 public class Board {
 
+    //Attributes
     private int rows;
     private int columns;
     private Piece[][] pieces;
 
+    //Constructor
     public Board(int rows, int columns) {
         if (rows < 1 || columns < 1){
             throw new BoardException("Error! There must be at least 1 row and 1 column");
@@ -15,6 +17,7 @@ public class Board {
         this.pieces = new Piece[rows][columns];
     }
 
+    //Getters
     public int getRows() {
         return rows;
     }
@@ -23,6 +26,7 @@ public class Board {
         return columns;
     }
 
+    //Public functions
     public Piece piece (int row, int column) {
         if (!positionExists(row, column)) {
             throw new BoardException("Position not found");

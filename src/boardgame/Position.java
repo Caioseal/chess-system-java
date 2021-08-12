@@ -2,6 +2,7 @@ package boardgame;
 
 public class Position {
 
+    //Attributes
     private int row;
     private int column;
 
@@ -28,6 +29,7 @@ public class Position {
         this.column = column;
     }
 
+    //Functions
     @Override
     public String toString() {
         return row + ", " + column;

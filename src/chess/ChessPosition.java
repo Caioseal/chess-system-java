@@ -4,9 +4,11 @@ import boardgame.Position;
 
 public class ChessPosition {
 
+    //Attributes
     private char column;
     private int row;
 
+    //Constructor
     public ChessPosition(char column, int row) {
         if (column < 'a' || column > 'h' || row < 1 || row > 8) {
             throw new ChessException("Error! Please type a position from A1 to H8");
@@ -15,6 +17,7 @@ public class ChessPosition {
         this.row = row;
     }
 
+    //Getters
     public char getColumn() {
         return column;
     }
@@ -23,6 +26,7 @@ public class ChessPosition {
         return row;
     }
 
+    //Functions
     protected Position toPosition(){
         return new Position(8- row, column - 'a');
     }
