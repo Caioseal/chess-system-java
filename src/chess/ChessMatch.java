@@ -15,12 +15,12 @@ public class ChessMatch {
     //Attributes
     private int turn;
     private Color currentPlayer;
-    private Board board;
+    private final Board board;
     private boolean check;
     private boolean checkMate;
 
-    private List<Piece> piecesOnTheBoard = new ArrayList<>();
-    private List<Piece> capturedPieces = new ArrayList<>();
+    private final List<Piece> piecesOnTheBoard = new ArrayList<>();
+    private final List<Piece> capturedPieces = new ArrayList<>();
 
     //Getters
     public int getTurn() {
@@ -31,9 +31,9 @@ public class ChessMatch {
         return currentPlayer;
     }
 
-    public boolean getCheck(){ return check;};
+    public boolean getCheck(){ return check;}
 
-    public boolean getCheckMate() { return checkMate;};
+    public boolean getCheckMate() { return checkMate;}
 
     //Constructor
     public ChessMatch() {
@@ -44,7 +44,7 @@ public class ChessMatch {
     }
 
     //Functions
-    public ChessPiece[][] getPieces() {
+    public ChessPiece[][] getPieces() { //Will return all pieces on the board
         ChessPiece[][] matrix = new ChessPiece[board.getRows()][board.getColumns()];
         for (int i = 0; i < board.getRows(); i++) {
             for (int j = 0; j < board.getColumns(); j++) {
@@ -74,7 +74,7 @@ public class ChessMatch {
         }
         ChessPiece movedPiece = (ChessPiece)board.piece(target);
 
-        check = (testCheck(opponent(currentPlayer))) ? true : false;
+        check = testCheck(opponent(currentPlayer));
 
         if (testCheckMate(opponent(currentPlayer))) {
             checkMate = true;

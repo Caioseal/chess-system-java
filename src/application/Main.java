@@ -1,6 +1,5 @@
 package application;
 
-import boardgame.Board;
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -37,15 +36,11 @@ public class Main {
 
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
 
-                if (captured != null) {
+                if (capturedPiece != null) {
                     captured.add(capturedPiece);
                 }
             }
-            catch (ChessException e) {
-                System.out.println(e.getMessage());
-                sc.nextLine();
-            }
-            catch (InputMismatchException e) {
+            catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }

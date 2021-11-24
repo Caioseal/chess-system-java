@@ -4,7 +4,7 @@ public abstract class Piece {
 
     //Attributes
     protected Position position;
-    private Board board;
+    private final Board board;
 
     //Constructor
     public Piece(Board board) {
@@ -26,10 +26,10 @@ public abstract class Piece {
 
     public boolean isThereAnyPossibleMove() {
         boolean[][]matrix = possibleMoves();
-        for(int i = 0; i < matrix.length; i++) {
-            for (int j=0; j < matrix.length; j++) {
-                if (matrix[i][j]) {
-                        return true;
+        for (boolean[] booleans : matrix) {
+            for (int j = 0; j < matrix.length; j++) {
+                if (booleans[j]) {
+                    return true;
                 }
             }
         }

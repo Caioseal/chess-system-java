@@ -5,8 +5,8 @@ import boardgame.Position;
 public class ChessPosition {
 
     //Attributes
-    private char column;
-    private int row;
+    private final char column;
+    private final int row;
 
     //Constructor
     public ChessPosition(char column, int row) {

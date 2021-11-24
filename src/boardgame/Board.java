@@ -3,9 +3,9 @@ package boardgame;
 public class Board {
 
     //Attributes
-    private int rows;
-    private int columns;
-    private Piece[][] pieces;
+    private final int rows;
+    private final int columns;
+    private final Piece[][] pieces;
 
     //Constructor
     public Board(int rows, int columns) {
