@@ -18,7 +18,6 @@ public class Main {
         ChessMatch chessMatch = new ChessMatch();
         List<ChessPiece> captured = new ArrayList<>();
 
-
         while (!chessMatch.getCheckMate()) {
             try {
                 UI.clearScreen();
@@ -38,6 +37,12 @@ public class Main {
 
                 if (capturedPiece != null) {
                     captured.add(capturedPiece);
+                }
+
+                if (ChessMatch.getPromoted() != null) {
+                    System.out.println("Enter piece for promotion (B/Q/R/Q)");
+                    String type = sc.nextLine();
+                    chessMatch.replacePromotedPiece(type);
                 }
             }
             catch (ChessException | InputMismatchException e) {
